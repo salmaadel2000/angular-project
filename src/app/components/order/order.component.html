@@ -1,0 +1,39 @@
+<div class="main">
+    <div class="container">
+      <h1 class="title">Coffee Order</h1>
+      <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+      <div *ngIf="orders.length === 0" class="no-orders">No orders found. <a routerLink="/shop">Go shopping</a></div>
+      <div *ngIf="orders.length > 0" class="parent">
+        <div class="order-list">
+          <div *ngFor="let order of orders" class="order-item">
+            <div class="order-content">
+              <div class="order-info">
+                <div class="order-header">
+                  <strong class="section-title">{{ order.title }}</strong>
+                  <span class="order-price">${{ order.total_price.toFixed(2) }}</span>
+                </div>
+                <h5>
+                  Status:
+                  <span [ngClass]="{
+                      'status-pending': order.status === 'pending',
+                      'status-accepted': order.status === 'accepted',
+                      'status-rejected': order.status === 'rejected'
+                    }">
+                    {{ order.status }}
+                  </span>
+                </h5>
+                <p class="order-description">{{ order.des }}</p>
+              </div>
+              <div class="order-actions">
+                <button *ngIf="order.status === 'pending'" (click)="deleteOrder(order.id)">Delete</button>
+              </div>
+            </div>
+            <div class="card-header">
+              <img [src]="order.img" alt="{{ order?.img }}" class="order-img">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

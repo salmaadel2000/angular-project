@@ -1,0 +1,113 @@
+.profile-main{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    background-color: 	 #f4f3eb;
+
+}
+.profile-container {
+  height: 600px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  flex-basis: 90%;
+    margin: auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color:white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    color: black;
+  }
+  
+  .profile-header {
+    width: 100%;
+    top: 0px;
+    height: 230px;
+    position: relative;
+    margin-bottom: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .profile-image {
+    margin-top:30px;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 5px solid black;
+    box-shadow: 0 0 8px rgba(58, 57, 57, 0.5)
+  }
+  .profile-details{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    text-align: center;
+    position: relative;
+  }
+  .profile-header h2 {
+    font-size: 3rem;
+    margin: 0;
+  }
+
+  
+  .profile-details p {
+    margin: 15px 0;
+    font-weight: 400;
+    font-size: 1em;
+    
+  }
+  .profile-details .sec{
+    position: absolute;
+    left: 185px;
+    top: 69px;
+   
+  }
+  
+  .profile-details span{
+    font-weight: 600;
+    font-size: 15px;
+  }
+  .profile-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    align-items: flex-end;
+    justify-content: right;
+    flex-direction: row;
+      justify-content: right;
+  }
+  
+  .action-button {
+    padding: 8px 45px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .action-button:hover{
+    background-color:black;
+    color: white;
+  }
+  
+  @media (min-width: 600px) {
+    .profile-container {
+      max-width: 600px;
+    }
+  
+    .profile-actions {
+      flex-direction: row;
+      /* justify-content: space-around; */
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .profile-container {
+      max-width: 700px;
+    }
+  }
+  

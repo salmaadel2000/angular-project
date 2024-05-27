@@ -1,0 +1,43 @@
+<section id="orders">
+    <h2>Orders</h2>
+    <div>
+        <label for="filter">Filter Orders: </label>
+        <select id="filter" [(ngModel)]="filterTerm">
+            <option value="all">All</option>
+            <option value="pending">Pending</option>
+            <option value="accepted">Accepted</option>
+            <option value="rejected">Rejected</option>
+        </select>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Date</th>
+                <th>Total Price</th>
+                <th>Product Titles</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let order of filterOrders()">
+                <td>{{ order.username }}</td>
+                <td>{{ order.date }}</td>
+                <td>{{ order.total_price }}</td>
+                <td>{{ getProductTitles(order) }}</td>
+                <td [ngClass]="{
+                        'status-pending': order.status === 'pending',
+                        'status-accepted': order.status === 'accepted',
+                        'status-rejected': order.status === 'rejected'
+                    }">{{ order.status }}</td>
+                <td>
+                    <div *ngIf="order.status === 'pending'">
+                        <button class="bg-success" (click)="updateOrderStatus(order.id, 'accepted')">Accept</button>
+                        <button class="bg-danger" (click)="updateOrderStatus(order.id, 'rejected')">Reject</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>

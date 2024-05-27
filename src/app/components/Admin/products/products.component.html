@@ -1,0 +1,27 @@
+<section id="products">
+    <button class="add-product btn btn-primary" [routerLink]="['/admin/add-product']">Add Product</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+                <td>{{ product.id }}</td>
+                <td>{{ product.title }}</td>
+                <td>{{ product.price }}</td>
+                <td><img [src]="product.image" alt="{{ product.title }}" style="width: 50px; height: 50px;"/></td>
+                <td class="actions">
+                    <button class="view-product btn btn-info" [routerLink]="['/admin/view-product', product.id]">View</button>
+                    <button class="edit-product btn btn-warning" (click)="editProduct(product.id)">Edit</button>
+                    <button class="delete-product btn btn-danger" (click)="deleteProduct(product.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>

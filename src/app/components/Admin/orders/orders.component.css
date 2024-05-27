@@ -1,0 +1,107 @@
+/* orders.component.css */
+
+#orders {
+    padding: 20px;
+}
+  
+#orders h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+  
+#orders select {
+    margin-bottom: 20px;
+}
+  
+#orders table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+  
+#orders table, #orders th, #orders td {
+    border: 1px solid #ccc;
+}
+  
+#orders th, #orders td {
+    padding: 10px;
+    text-align: left;
+}
+  
+#orders th {
+    background-color: #f4f4f4;
+}
+  
+.status-pending {
+    color: gray;
+}
+  
+.status-accepted {
+    color: green;
+}
+  
+.status-rejected {
+    color: red;
+}
+  
+button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+  
+button:hover {
+    opacity: 0.8;
+}
+  
+/* Responsive styles */
+@media (max-width: 768px) {
+    #orders table, #orders th, #orders td {
+        display: block;
+        width: 100%;
+    }
+  
+    #orders th, #orders td {
+        box-sizing: border-box;
+    }
+  
+    #orders th {
+        display: none; /* Hide table headers on small screens */
+    }
+  
+    #orders td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 5px;
+        border-bottom: 1px solid #ccc;
+    }
+  
+    #orders td::before {
+        content: attr(data-label);
+        flex-basis: 50%;
+        text-align: left;
+        font-weight: bold;
+        padding-right: 10px;
+    }
+  
+    #orders button {
+        margin-top: 5px;
+        width: 100%;
+    }
+}
+  
+@media (max-width: 576px) {
+    #orders td {
+        display: table-cell;
+    }
+
+    #orders td::before {
+        display: table-cell;
+    }
+
+    #orders button {
+        display: table-cell;
+    }
+}

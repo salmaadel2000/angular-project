@@ -1,0 +1,130 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .profile-edit-container {
+    display: flex;
+    width: 100%;
+    max-width: 800px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    flex-wrap: wrap; 
+  }
+  
+  .profile-edit-left {
+    background-color: #f9f9f9;
+    padding: 40px;
+    flex: 1;
+  }
+  
+  .profile-edit-left h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  input[type="password"],
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button[type="submit"] {
+    padding: 10px 40px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .profile-edit-right {
+    background-color: #fff;
+    padding: 40px;
+    flex: 1;
+  }
+  
+  .profile-edit-right h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .profile-image img {
+    max-width: 100%;
+    height: 400px;
+  }
+  
+  .error-message {
+    color: #d9534f;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+  }
+  input[type="file"] {
+    display: none;
+  }
+  
+  label[for="image"] {
+    display: inline-block;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  /* width: 50% !important; */
+    color: white;
+  }
+  
+  label[for="image"]:hover {
+    background-color:#3e3e3e;
+  }
+
+  
+  @media (max-width: 768px) {
+    .profile-edit-container {
+      flex-direction: column;
+    }
+     img{
+        height: 150px !important;
+     }
+    .profile-edit-left,
+    .profile-edit-right {
+      padding: 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .profile-edit-left h2,
+    .profile-edit-right h2 {
+      font-size: 20px;
+    }
+  
+    input[type="text"],
+    input[type="password"],
+    select {
+      width: calc(100% - 20px);
+    }
+  }
+  .main{
+    background-color: 	 #f4f3eb;
+    height: 100vh;
+  }

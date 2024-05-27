@@ -1,0 +1,60 @@
+<div class="container my-5">
+    <div class="row  gx-align-items-center">
+        <div class="col-md-7">
+           <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                @for(image of product.images ; track product.id ){
+                    <img src="{{image}}" />
+                }
+              </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+          <div thumbsSlider="" class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                @for(image of product.images ; track product.id ){
+                    <img src="{{image}}" />
+                }              
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5 my-5 py-5">
+            <div class="product-description-section px-3 ">
+                <div class="prodcut-description-data d-flex flex-column justify-content-evenly gap-4">
+                    <div class="product-description-info">
+                        <h1 class="product-description-h1">{{product.name}}</h1>
+                        <p>{{product.description}}</p>
+                    </div>
+                    <div class="product-description-pricing d-flex align-items-center">
+                        <span>price : </span>
+                        <strong class="mx-2" >{{product.price}}</strong>
+                        <sub class="ms-1">inclusive of VAT</sub>
+                    </div>
+                    <div class="product-description-amount">
+                        <span >Amount</span>
+                        <select name="" id="">
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                        </select>
+                    </div>
+                   
+                    <div class="product-adding d-flex flex-row gap-5">
+                        <div class="product-wish d-flex justify-content-center align-items-center px-4 text-light ">
+                          <i class="fa-regular fa-heart fs-6"></i>
+                        </div>
+                        <div class="product-cart">
+                            <button type="button" class="btn btn-primary ">Add To Cart</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+<div class="main">
+    <div class="container">
+      <div class="profile-edit-container">
+        <div class="profile-edit-left">
+          <h2>Edit Profile</h2>
+          <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+          <form (ngSubmit)="submit(EditForm)" #EditForm="ngForm">
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" id="username" name="username" [(ngModel)]="user.username" #username="ngModel" required minlength="6">
+              <div *ngIf="EditForm.submitted && username.invalid" class="error-message">
+                <div *ngIf="username.errors">Username is required.</div>
+                <div *ngIf="username.errors">Username must be at least 6 characters long.</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="gender">Gender</label>
+              <select id="gender" name="gender" [(ngModel)]="user.gender" #gender="ngModel" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+              <div *ngIf="EditForm.submitted && gender.invalid" class="error-message">
+                Please select a gender.
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="image">Change your Profile Picture</label>
+              <input type="file" id="image" name="image" (change)="onFileSelected($event)">
+              <div *ngIf="EditForm.submitted && !user.image" class="error-message">
+                Please select an image file.
+              </div>
+            </div>
+            <div class="register-button-container">
+              <button type="submit" [disabled]="EditForm.invalid">Save</button>
+            </div>
+          </form>
+        </div>
+        <div class="profile-edit-right">
+          <h2>Profile Picture</h2>
+          <div class="profile-image">
+            <img src="{{user?.image}}" alt="Profile Image" *ngIf="user.image">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

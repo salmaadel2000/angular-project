@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #282d32;">
+  <div class="container-fluid">
+      <a class="navbar-brand" href="/">
+          <img src="https://www4.0zz0.com/2024/05/24/13/363734201.png" alt="Logo" style="height: 60px; width: 65px;">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <form class="d-flex">
+              <input class="form-control me-2" style="width: 400px;" type="search" placeholder="What are you looking for?" aria-label="Search" >
+          </form>
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                  <a class="nav-link" [routerLink]="'/register'">
+                      <fa-icon [icon]="faUserPlus"></fa-icon> Register
+                  </a>
+              </li>
+              <li class="nav-item" *ngIf="!isLoggedIn">
+                <a class="nav-link" (click)="logout()">
+                    <fa-icon [icon]="faSignOutAlt"></fa-icon> Logout
+                </a>
+            </li>
+            <li class="nav-item" *ngIf="isLoggedIn">
+                <a class="nav-link" [routerLink]="'/login'" (click)="login()">
+                    <fa-icon [icon]="faSignInAlt"></fa-icon> Login
+                </a>
+            </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">
+                      <fa-icon [icon]="faHeart"></fa-icon> Favorites
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#" routerLink="/cart">
+                      <fa-icon [icon]="faShoppingCart"></fa-icon> Cart
+                  </a>
+              </li>
+          </ul>
+      </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+
+  
+ 

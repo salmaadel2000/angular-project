@@ -1,0 +1,14 @@
+.main-hero-info{
+    color : #fff;
+    font-size: 5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.hero-left-container{
+    background-color: #331a1a;
+}
+.slider-container-hero{
+    height: 20rem;
+    background-position: center;
+    background-size: cover;
+}

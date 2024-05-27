@@ -1,0 +1,35 @@
+/* navbar.component.css */
+
+.navbar-brand {
+    font-weight: bold;
+  }
+  
+  .navbar-nav .nav-item .nav-link {
+    font-size: 16px;
+    padding-right: 20px;
+  }
+  
+  .navbar-nav .nav-item .dropdown-toggle {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-nav .nav-item .dropdown-toggle img {
+    margin-right: 8px;
+  }
+  
+  .dropdown-menu {
+    min-width: 150px;
+  }
+  
+  .dropdown-item {
+    font-size: 14px;
+  }
+  
+  @media (max-width: 767px) {
+    .navbar-nav .nav-item .nav-link {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+  

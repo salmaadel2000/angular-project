@@ -1,0 +1,115 @@
+
+
+.card {
+    margin-top: 60px;
+    /* padding-top: 40px; */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5)
+}
+
+
+.card-header {
+    margin-top: 0;
+    position: relative;
+    background-position: center;
+    /* background-size: cover; */
+    height: 200px;
+    background-repeat: repeat-x;
+    margin-bottom: 30px;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    background-image: url(https://i.pinimg.com/236x/10/7f/42/107f427f5c474c6dde4196aae1bdbccd.jpg);
+    /* box-shadow: 0 0 7px rgba(0, 0, 0, 0.5); */
+    background-color: white;
+}
+
+
+
+
+.card-header h2 {
+    font-size: 25px;
+    right:225px;
+    top: 130px;
+    position: absolute;
+    color: #3e3e3e;
+    text-align: center;
+    font-weight: 600;
+    font-size: 35px;
+}
+
+.card-body {
+    margin-bottom: 30px;
+}
+
+.form-control {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    background-color: #fff;
+    color: #333;
+    width: 100%;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: rgba(102, 102, 102, 0.5);
+    box-shadow: 0 0 5px rgba(102, 102, 102, 0.5);
+}
+
+.btn-primary {
+    background-color: #333;
+    border: none;
+    color: white;
+    width: 30%;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    background-color: #3e3e3e;
+}
+
+.register-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.btn-primary:active,
+.btn-primary:focus {
+    background-color: #3e3e3e;
+}
+
+.error-message {
+    color: #d9534f;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .card {
+        margin-top: 20px;
+        
+    }
+    .card-header h2 {
+        font-size: 30px;
+        right:200px;
+    }
+    .header {
+        font-size: 25px;
+    }
+}
+.main{
+    height: 100vh;
+    background-color: 	 #f4f3eb;
+}

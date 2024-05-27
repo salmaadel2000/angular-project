@@ -1,0 +1,22 @@
+<div class="profile-main">
+<div class="profile-container" *ngIf="user; else loading">
+    <div class="profile-header">
+      <img  src="{{user?.image}}"alt="{{ user?.username }}" class="profile-image">
+    </div>
+    <div class="profile-details">
+      <h2>{{ user?.username }}</h2>
+      <p><span class="arrow right">Email</span> {{ user?.email }}</p>
+      <p class="sec"><span>gender</span> {{ user?.gender }}</p>
+    </div>
+    <div class="profile-actions">
+     
+      <button *ngIf="user?.id" class="action-button" [routerLink]="'/edit/' + user.id">Edit</button>
+      <button *ngIf="user?.id" class="action-button" [routerLink]="'/orders/' + user.id">My orders</button>
+      <button *ngIf="user?.id" class="action-button" [routerLink]="">Home</button>
+    </div>
+    
+  </div>
+  <ng-template #loading>
+    <p>Loading user data...</p>
+  </ng-template>
+  </div>

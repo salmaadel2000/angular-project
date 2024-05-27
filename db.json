@@ -1,0 +1,26 @@
+{
+  "users": [
+    {
+      "email": "willie.montgomery@example.com",
+      "username": "salma.adel77",
+      "password": "password123",
+      "gender": "female",
+      "id": "1",
+      "image": "https://i.pinimg.com/236x/93/c3/9d/93c39d1cd37ac348f7c144fd7b85825e.jpg",
+      "role": "user",
+      "created_at": "2023-01-01T00:00:00.000Z",
+      "updated_at": "2023-01-01T00:00:00.000Z"
+    },
+    {
+      "email": "jane.doe@example.com",
+      "username": "Jane Doe",
+      "password": "password123",
+      "gender": "female",
+      "id": "2",
+      "image": "https://i.pinimg.com/236x/29/38/98/293898a5e0479a3c0b638ad27ada43ff.jpg",
+      "role": "user",
+      "created_at": "2023-01-01T00:00:00.000Z",
+      "updated_at": "2023-01-01T00:00:00.000Z"
+    }
+  ]
+}

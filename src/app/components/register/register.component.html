@@ -1,0 +1,68 @@
+<div class="main-register">
+<div class="container ">
+  <div class="setup-container">
+    <div class="setup-left">
+      <div class="setup-image">
+        <img src="https://i.pinimg.com/564x/5a/09/ba/5a09ba67ad6db35b645babba9875fff9.jpg" alt="User Image">
+      </div>
+      <h2>Let's get you set up</h2>
+      <p>It should only take a couple of minutes to pair with your watch</p>
+      <button class="next-button">→</button>
+    </div>
+    <div class="setup-right">
+      <form (ngSubmit)="onSubmit(registerForm)" #registerForm="ngForm" class="needs-validation" novalidate>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" [(ngModel)]="user.email" name="email" required email pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+          <div *ngIf="registerForm.submitted && registerForm.controls['email']?.invalid" class="error-message">
+            Please provide a valid email.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input type="text" class="form-control" id="username" [(ngModel)]="user.username" name="username" required minlength="6">
+          <div *ngIf="registerForm.submitted && registerForm.controls['username']?.invalid" class="error-message">
+            Username must be at least 6 characters long.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" [(ngModel)]="user.password" name="password" required minlength="6">
+          <div *ngIf="registerForm.submitted && registerForm.controls['password']?.invalid" class="error-message">
+            Password must be at least 6 characters long.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="confirmPassword" class="form-label">Confirm Password</label>
+          <input type="password" class="form-control" id="confirmPassword" [(ngModel)]="user.confirmPassword" name="confirmPassword" required minlength="6" >
+          <div *ngIf="password !== confirmPassword" class="error-message">
+            Passwords do not match.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="gender" class="form-label">Gender</label>
+          <select id="gender" class="form-select" [(ngModel)]="user.gender" name="gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+          <div *ngIf="registerForm.submitted && registerForm.controls['gender']?.invalid" class="error-message">
+            Please select a gender.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="image" class="form-label">select your profile picture</label>
+          <input type="file" id="image" (change)="onFileSelected($event)" name="image" accept="image/*" required>
+          <div *ngIf="registerForm.submitted && !selectedFile" class="error-message">
+            Please select an image file.
+          </div>
+        </div>
+        <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+        <div class="register-button-container">
+          <button type="submit" class="btn btn-primary">Register</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>

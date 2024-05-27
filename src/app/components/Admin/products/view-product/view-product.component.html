@@ -1,0 +1,11 @@
+<section id="view-product">
+    <h2>View Product</h2>
+    <div *ngIf="product">
+        <p><strong>Title:</strong> {{ product.title }}</p>
+        <p><strong>Price:</strong> {{ product.price }}</p>
+        <p><strong>Details:</strong> {{ product.details }}</p>
+        <p><strong>Image:</strong></p>
+        <img [src]="product.image" alt="{{ product.title }}" style="width: 200px; height: 200px;">
+        <button (click)="goBack()">Back</button>
+    </div>
+</section>

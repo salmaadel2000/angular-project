@@ -1,0 +1,120 @@
+/* products.component.css */
+
+#products {
+    padding: 20px;
+  }
+  
+  .add-product {
+    margin-bottom: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .btn {
+    cursor: pointer;
+  }
+  
+  img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  input[type="text"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 1200px) {
+    .actions {
+      gap: 5px;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .actions {
+      flex-direction: column;
+      gap: 5px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    table, th, td {
+      display: block;
+      width: 100%;
+    }
+  
+    th, td {
+      box-sizing: border-box;
+    }
+  
+    th {
+      display: none; /* Hide table headers on small screens */
+    }
+  
+    td {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 5px;
+      border-bottom: 1px solid #ddd;
+    }
+  
+    td::before {
+      content: attr(data-label);
+      flex-basis: 50%;
+      text-align: left;
+      font-weight: bold;
+      padding-right: 10px;
+    }
+  
+    .actions {
+      flex-direction: column;
+      gap: 5px;
+    }
+  
+    .btn {
+      width: 100%; /* Full width for buttons on small screens */
+      text-align: center;
+    }
+  
+    img {
+      width: 100%;
+      height: auto;
+    }
+  
+    input[type="text"] {
+      width: 100%; /* Full width for input on small screens */
+    }
+  }
+  
+  @media (max-width: 576px) {
+    td {
+    display: table-cell;
+    }
+  
+    td::before {
+      display: table-cell;
+    }
+  
+    .btn {
+        display: table-cell;
+    }
+  }
+  
