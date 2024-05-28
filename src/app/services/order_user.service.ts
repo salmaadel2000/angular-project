@@ -1,24 +1,31 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { Order } from '../models/order.model';
-import { map } from 'rxjs/operators';
+import { ProfileService} from "./Profile.service"; 
+
 @Injectable({
   providedIn: 'root'
 })
 export class OrderService {
-  private ordersUrl = 'http://localhost:3001/order'; 
+  private ordersUrl = 'http://127.0.0.1:8000/api/order';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private ProfileService: ProfileService) {}
 
   getOrdersByUserId(userId: number): Observable<Order[]> {
-    return this.http.get<Order[]>(this.ordersUrl).pipe(
-      map(orders => orders.filter(order => order.user_id === userId))
-    );
+    const token = this.ProfileService.getTokenFromLocalStorage(); 
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    return this.http.get<Order[]>(`${this.ordersUrl}/${userId}`, { headers });
   }
 
-  deleteOrder(orderId: number): Observable<any> {
-    const url = `${this.ordersUrl}/${orderId}`;
-    return this.http.delete(url);
+  deleteOrder(orderId: number): Observable<void> {
+    const token = this.ProfileService.getTokenFromLocalStorage(); 
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    return this.http.delete<void>(`${this.ordersUrl}/${orderId}`,{headers});
   }
 }
+

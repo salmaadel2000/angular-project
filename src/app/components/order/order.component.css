@@ -65,9 +65,7 @@ p{
   }
   
   .order-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+   text-align: right;
   }
   
   .order-checkbox {
@@ -125,7 +123,15 @@ p{
     font-size: 18px;
     border-radius: 5px;
   }
-
+.go-shop{
+  margin-top: 40px;
+  color: black !important;
+  font-size: 30px;
+}
+.go-shop a{
+  color: orange;
+  cursor:pointer;
+}
 
   /* Media Queries for Responsiveness */
   

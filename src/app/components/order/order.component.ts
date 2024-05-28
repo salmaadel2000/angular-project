@@ -1,14 +1,15 @@
-import { Component, OnInit,Input  } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { OrderService } from '../../services/order_user.service';
 import { Order } from '../../models/order.model';
 import Swal from 'sweetalert2';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router'; 
 
 @Component({
   selector: 'app-order',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule], // Ensure RouterModule is imported here
   templateUrl: './order.component.html',
   styleUrls: ['./order.component.css']
 })
@@ -27,6 +28,7 @@ export class OrderComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
       this.userId = +id;
+      // console.log(this.fetchOrders())
       this.fetchOrders();
     } else {
       this.errorMessage = 'User ID is missing';
@@ -34,8 +36,10 @@ export class OrderComponent implements OnInit {
   }
 
   fetchOrders(): void {
+    // console.log(this.userId)
     this.orderService.getOrdersByUserId(this.userId).subscribe(
       (data: Order[]) => {
+        console.log(data)
         this.orders = data;
       },
       error => {
@@ -68,5 +72,4 @@ export class OrderComponent implements OnInit {
       }
     });
   }
-  
 }

@@ -18,7 +18,8 @@ export class EditprofileComponent implements OnInit {
   errorMessage: string | null = null;
   token: string | null = null;
   selectedFile: File | null = null;
-  file:any
+  file:any;
+  fileData:any
   constructor(
     private profileService: ProfileService,
     private router: Router
@@ -37,6 +38,7 @@ export class EditprofileComponent implements OnInit {
       (userData) => {
         console.log(userData)
         this.user = userData;
+        this.fileData=userData.image
       },
       (error ) => { 
         console.error('Error fetching user data:', error);
@@ -79,6 +81,7 @@ export class EditprofileComponent implements OnInit {
   
   onFileSelected(event: any): void {
     this.file = event.target.files[0];
+    this.user.image=this.file.name
     if (this.file && this.file.type.startsWith('image/')) {
       this.selectedFile = this.file;
       this.errorMessage = null;
@@ -87,5 +90,14 @@ export class EditprofileComponent implements OnInit {
       this.errorMessage = 'Please select a valid image file.';
     }
     console.log(this.file)
+    this.ReadFile(this.file)
   }
+  ReadFile(file: File) {
+    const reader = new FileReader();
+    reader.onload = () => {
+      this.fileData = reader.result;
+    };
+    reader.readAsDataURL(file);
+  
+}
 }

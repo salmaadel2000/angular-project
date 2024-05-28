@@ -16,7 +16,7 @@ export const routes: Routes = [
       path: '',
       component: NavbarComponent, 
       children: [
-          { path: 'home', component: HomeComponent },
+          { path: '', component: HomeComponent },
           { path: 'product/detail/:id', component: ProductDetailComponent },
           { path: 'admin', component: LayoutComponent, children: ADMIN_ROUTES },
           { path: 'profile/:id', component: ProfileComponent },

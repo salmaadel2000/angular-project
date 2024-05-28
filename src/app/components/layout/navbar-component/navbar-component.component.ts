@@ -39,11 +39,11 @@ export class NavbarComponent implements OnInit {
   }
   
   logout(): void {
+    this.router.navigate(['']);
     this.isLoggedIn = true;
     this.profileService.removeTokenFromLocalStorage();
-    this.router.navigate(['/home']);
   }
   login(): void {
-    this.isLoggedIn = true;
+    this.isLoggedIn = false;
   }
 }

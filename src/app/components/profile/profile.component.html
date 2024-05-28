@@ -12,7 +12,7 @@
      
       <button *ngIf="user?.id" class="action-button" [routerLink]="'/edit/' + user.id">Edit</button>
       <button *ngIf="user?.id" class="action-button" [routerLink]="'/orders/' + user.id">My orders</button>
-      <button *ngIf="user?.id" class="action-button" [routerLink]="">Home</button>
+      <button *ngIf="user?.id" class="action-button" [routerLink]="['']">Home</button>
     </div>
     
   </div>

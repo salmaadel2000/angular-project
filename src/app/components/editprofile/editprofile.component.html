@@ -39,8 +39,7 @@
         <div class="profile-edit-right">
           <h2>Profile Picture</h2>
           <div class="profile-image">
-            <img src="{{user?.image}}" alt="Profile Image" *ngIf="user.image">
-            
+            <img [src]="fileData" alt="Profile Image" *ngIf="user.image">
           </div>
         </div>
       </div>
